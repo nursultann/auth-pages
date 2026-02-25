@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { User } from '../User.js'
 
@@ -17,7 +17,14 @@ export function LoginPage({ setCurrentUser }) {
     setCurrentUser(user)
     navigate('/dashboard')
   }
-
+  function UserDetails(){
+    if(localStorage.getItem('session') != null){
+        navigate('/dashboard');
+    }
+  }
+ useEffect(()=>{
+    UserDetails();
+ },[])
   return (
     <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light">
       <div className="card shadow p-4" style={{ width: 380, borderRadius: 16 }}>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { User } from '../User.js'
 
@@ -8,6 +8,15 @@ export function RegisterPage() {
   const [success, setSuccess] = useState(false)
   const navigate = useNavigate()
 
+ function UserDetails(){
+    if(localStorage.getItem('session') != null){
+        navigate('/dashboard');
+    }
+  }
+ useEffect(()=>{
+    UserDetails();
+ },[])
+  
   function handleSubmit(e) {
     e.preventDefault()
     setError('')

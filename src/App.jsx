@@ -22,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage currentUser={currentUser} />} />
         <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
+
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={
           <PrivateRoute currentUser={currentUser}>
