@@ -7,7 +7,7 @@ export function HomePage({ currentUser }) {
         <i className="bi bi-shield-lock-fill text-primary" style={{ fontSize: 72 }}></i>
         <h1 className="fw-bold mt-3 mb-2">Auth App</h1>
         <p className="text-muted mb-4 fs-5">
-          Пример аутентификации на React + ООП + localStorage
+          {/* Пример аутентификации на React + ООП + localStorage */}
         </p>
 
         {currentUser ? (
